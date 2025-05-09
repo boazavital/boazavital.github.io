@@ -12,11 +12,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);} // prettier-ignore
     gtag('js', new Date());
-
     gtag('config', 'G-1ET64B3761');
   </script>
 
-  <!-- Inter Light (300) -->
+  <!-- Inter Light (300) //-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -29,24 +28,21 @@
       --radius: 8px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html,body { overscroll-behavior: none; }
+    html, body { overscroll-behavior: none; }
 
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      font-weight: 300;
+      font-weight: 300; /* Inter Light */
       background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 0 1rem;
+      display: grid;
+      place-items: center;            /* perfect centering */
+      min-height: 100dvh;             /* responsive to address bar */
+      padding: 0 1rem;                /* horizontal gutter */
       color: #000;
-      overflow: hidden;
+      overflow: hidden;               /* lock scroll */
     }
 
     .card {
@@ -55,7 +51,7 @@
       background: var(--card-bg);
       border-radius: var(--radius);
       padding: 2rem 1.5rem;
-      box-shadow: 0 6px 14px rgba(0,0,0,.25);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
     }
 
     .title {
@@ -65,53 +61,66 @@
       font-weight: 400;
     }
 
-    .list { list-style:none; margin:0; padding:0; }
+    .list { list-style: none; margin: 0; padding: 0; }
 
     .item {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:1rem 0;
-      border-bottom:1px solid #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid #f1f1f1;
     }
-    .item:last-child{border-bottom:none;}
+    .item:last-child { border-bottom: none; }
 
     /* Brand variables */
-    .item.x{--brand:#000000;}
-    .item.linkedin{--brand:#0A66C2;}
-    .item.signal{--brand:#3A76F0;}
-    .item.telegram{--brand:#26A5E4;}
-    .item.whatsapp{--brand:#25D366;}
+    .item.x        { --brand: #000000; }
+    .item.linkedin { --brand: #0A66C2; }
+    .item.signal   { --brand: #3A76F0; }
+    .item.telegram { --brand: #26A5E4; }
+    .item.whatsapp { --brand: #25D366; }
 
-    .label{display:flex;align-items:center;gap:12px;font-size:1rem;text-transform:lowercase;}
-
-    .icon{
-      width:20px;height:20px;display:inline-block;background-color:var(--brand);
-      -webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
-      -webkit-mask-position:center;mask-position:center;
+    .label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      text-transform: lowercase;
     }
-    .icon.x{-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg');mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg');}
-    .icon.linkedin{-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg');mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg');}
-    .icon.signal{-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg');mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg');}
-    .icon.telegram{-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg');mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg');}
-    .icon.whatsapp{-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg');mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg');}
 
-    .btn{
-      display:inline-block;
-      width:88px;               /* equal width */
-      padding:0.35rem 0;
-      background:transparent;
-      border:2px solid var(--primary);
-      border-radius:var(--radius);
-      font-size:0.9rem;
-      color:var(--primary);
-      text-align:center;
-      text-decoration:none;
-      transition:all .2s ease;
+    /* Masked SVG icons */
+    .icon {
+      width: 20px;
+      height: 20px;
+      background: var(--brand);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
     }
-    .btn:hover,.btn:focus{background:var(--primary);color:#fff;}
+    .icon.x        { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg');            mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg'); }
+    .icon.linkedin { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg');     mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'); }
+    .icon.signal   { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg');       mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg'); }
+    .icon.telegram { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg');     mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg'); }
+    .icon.whatsapp { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg');     mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg'); }
 
-    @media(max-width:420px){.btn{padding:0.55rem 0;}}
+    .btn {
+      width: 104px;                   /* uniform width */
+      text-align: center;
+      padding: 0.35rem 0;
+      background: transparent;
+      border: 2px solid var(--primary);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      color: var(--primary);
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .btn:hover, .btn:focus { background: var(--primary); color: #fff; }
+
+    /* Larger touch targets on small screens */
+    @media (max-width: 420px) { .btn { padding: 0.55rem 0; } }
   </style>
 </head>
 <body>
@@ -119,11 +128,26 @@
     <h1 class="title">Boaz Avital | Anchorage Digital</h1>
 
     <ul class="list">
-      <li class="item x"><span class="label"><span class="icon x"></span> @bx</span><a class="btn" href="https://x.com/bx" target="_blank" rel="noopener">Visit</a></li>
-      <li class="item linkedin"><span class="label"><span class="icon linkedin"></span> linkedin</span><a class="btn" href="https://www.linkedin.com/in/boazavital" target="_blank" rel="noopener">Visit</a></li>
-      <li class="item signal"><span class="label"><span class="icon signal"></span> signal</span><a class="btn" href="https://signal.me/#eu/mF7SLSo2I-AjoRafjNU20YW8bJAhCEOyTMVJNubfxhNZ2PMphZNObZSQSRAeACql" target="_blank" rel="noopener">Message</a></li>
-      <li class="item telegram"><span class="label"><span class="icon telegram"></span> telegram</span><a class="btn" href="https://t.me/boazavital" target="_blank" rel="noopener">Message</a></li>
-      <li class="item whatsapp"><span class="label"><span class="icon whatsapp"></span> whatsapp</span><a class="btn" href="https://wa.me/14087181143" target="_blank" rel="noopener">Message</a></li>
+      <li class="item x">
+        <span class="label"><span class="icon x"></span> @bx</span>
+        <a class="btn" href="https://x.com/bx" target="_blank" rel="noopener">Visit</a>
+      </li>
+      <li class="item linkedin">
+        <span class="label"><span class="icon linkedin"></span> linkedin</span>
+        <a class="btn" href="https://www.linkedin.com/in/boazavital" target="_blank" rel="noopener">Visit</a>
+      </li>
+      <li class="item signal">
+        <span class="label"><span class="icon signal"></span> signal</span>
+        <a class="btn" href="https://signal.me/#eu/mF7SLSo2I-AjoRafjNU20YW8bJAhCEOyTMVJNubfxhNZ2PMphZNObZSQSRAeACql" target="_blank" rel="noopener">Message</a>
+      </li>
+      <li class="item telegram">
+        <span class="label"><span class="icon telegram"></span> telegram</span>
+        <a class="btn" href="https://t.me/boazavital" target="_blank" rel="noopener">Message</a>
+      </li>
+      <li class="item whatsapp">
+        <span class="label"><span class="icon whatsapp"></span> whatsapp</span>
+        <a class="btn" href="https://wa.me/14087181143" target="_blank" rel="noopener">Message</a>
+      </li>
     </ul>
   </section>
 </body>
