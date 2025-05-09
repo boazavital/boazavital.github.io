@@ -15,7 +15,7 @@
     gtag('config', 'G-1ET64B3761');
   </script>
 
-  <!-- Inter Light (300) //-->
+  <!-- Inter Light (300) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -29,20 +29,19 @@
     }
 
     * { box-sizing: border-box; }
-
     html, body { overscroll-behavior: none; }
 
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      font-weight: 300; /* Inter Light */
+      font-weight: 300;
       background: var(--bg);
       display: grid;
-      place-items: center;            /* perfect centering */
-      min-height: 100dvh;             /* responsive to address bar */
-      padding: 0 1rem;                /* horizontal gutter */
+      place-items: center;
+      min-height: 100dvh; /* handles mobile UI chrome */
+      padding: 0 1rem;
       color: #000;
-      overflow: hidden;               /* lock scroll */
+      overflow: hidden;
     }
 
     .card {
@@ -63,14 +62,18 @@
 
     .list { list-style: none; margin: 0; padding: 0; }
 
+    /* Clickable row */
     .item {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1rem 0;
       border-bottom: 1px solid #f1f1f1;
+      text-decoration: none;   /* remove anchor underline */
+      color: inherit;          /* inherit text color */
     }
-    .item:last-child { border-bottom: none; }
+    /* Remove bottom border for last row */
+    .list li:last-child .item { border-bottom: none; }
 
     /* Brand variables */
     .item.x        { --brand: #000000; }
@@ -87,7 +90,7 @@
       text-transform: lowercase;
     }
 
-    /* Masked SVG icons */
+    /* Masked SVG icons coloured with brand variable */
     .icon {
       width: 20px;
       height: 20px;
@@ -99,14 +102,15 @@
       -webkit-mask-position: center;
       mask-position: center;
     }
-    .icon.x        { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg');            mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg'); }
-    .icon.linkedin { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg');     mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'); }
-    .icon.signal   { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg');       mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg'); }
-    .icon.telegram { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg');     mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg'); }
-    .icon.whatsapp { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg');     mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg'); }
+    .icon.x        { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg');           mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg'); }
+    .icon.linkedin { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg');    mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'); }
+    .icon.signal   { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg');      mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg'); }
+    .icon.telegram { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg');    mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg'); }
+    .icon.whatsapp { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg');    mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg'); }
 
+    /* Faux button */
     .btn {
-      width: 104px;                   /* uniform width */
+      width: 104px;
       text-align: center;
       padding: 0.35rem 0;
       background: transparent;
@@ -114,12 +118,16 @@
       border-radius: var(--radius);
       font-size: 0.9rem;
       color: var(--primary);
-      text-decoration: none;
-      transition: background 0.2s ease, color 0.2s ease;
+      pointer-events: none; /* span inside anchor shouldn't steal click */
     }
-    .btn:hover, .btn:focus { background: var(--primary); color: #fff; }
 
-    /* Larger touch targets on small screens */
+    /* Hover state for entire row */
+    .item:hover .btn,
+    .item:focus-visible .btn {
+      background: var(--primary);
+      color: #fff;
+    }
+
     @media (max-width: 420px) { .btn { padding: 0.55rem 0; } }
   </style>
 </head>
@@ -128,25 +136,35 @@
     <h1 class="title">Boaz Avital | Anchorage Digital</h1>
 
     <ul class="list">
-      <li class="item x">
-        <span class="label"><span class="icon x"></span> @bx</span>
-        <a class="btn" href="https://x.com/bx" target="_blank" rel="noopener">Visit</a>
+      <li>
+        <a class="item x" href="https://x.com/bx" target="_blank" rel="noopener">
+          <span class="label"><span class="icon x"></span> @bx</span>
+          <span class="btn">Visit</span>
+        </a>
       </li>
-      <li class="item linkedin">
-        <span class="label"><span class="icon linkedin"></span> linkedin</span>
-        <a class="btn" href="https://www.linkedin.com/in/boazavital" target="_blank" rel="noopener">Visit</a>
+      <li>
+        <a class="item linkedin" href="https://www.linkedin.com/in/boazavital" target="_blank" rel="noopener">
+          <span class="label"><span class="icon linkedin"></span> linkedin</span>
+          <span class="btn">Visit</span>
+        </a>
       </li>
-      <li class="item signal">
-        <span class="label"><span class="icon signal"></span> signal</span>
-        <a class="btn" href="https://signal.me/#eu/mF7SLSo2I-AjoRafjNU20YW8bJAhCEOyTMVJNubfxhNZ2PMphZNObZSQSRAeACql" target="_blank" rel="noopener">Message</a>
+      <li>
+        <a class="item signal" href="https://signal.me/#eu/mF7SLSo2I-AjoRafjNU20YW8bJAhCEOyTMVJNubfxhNZ2PMphZNObZSQSRAeACql" target="_blank" rel="noopener">
+          <span class="label"><span class="icon signal"></span> signal</span>
+          <span class="btn">Message</span>
+        </a>
       </li>
-      <li class="item telegram">
-        <span class="label"><span class="icon telegram"></span> telegram</span>
-        <a class="btn" href="https://t.me/boazavital" target="_blank" rel="noopener">Message</a>
+      <li>
+        <a class="item telegram" href="https://t.me/boazavital" target="_blank" rel="noopener">
+          <span class="label"><span class="icon telegram"></span> telegram</span>
+          <span class="btn">Message</span>
+        </a>
       </li>
-      <li class="item whatsapp">
-        <span class="label"><span class="icon whatsapp"></span> whatsapp</span>
-        <a class="btn" href="https://wa.me/14087181143" target="_blank" rel="noopener">Message</a>
+      <li>
+        <a class="item whatsapp" href="https://wa.me/14087181143" target="_blank" rel="noopener">
+          <span class="label"><span class="icon whatsapp"></span> whatsapp</span>
+          <span class="btn">Message</span>
+        </a>
       </li>
     </ul>
   </section>
