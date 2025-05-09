@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Prevent indexing by search engines -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
   <title>Boaz Avital | Anchorage Digital</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1ET64B3761"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} // prettier-ignore
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-1ET64B3761');
   </script>
@@ -38,7 +41,7 @@
       background: var(--bg);
       display: grid;
       place-items: center;
-      min-height: 100dvh; /* handles mobile UI chrome */
+      min-height: 100dvh;
       padding: 0 1rem;
       color: #000;
       overflow: hidden;
@@ -62,20 +65,17 @@
 
     .list { list-style: none; margin: 0; padding: 0; }
 
-    /* Clickable row */
     .item {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1rem 0;
       border-bottom: 1px solid #f1f1f1;
-      text-decoration: none;   /* remove anchor underline */
-      color: inherit;          /* inherit text color */
+      text-decoration: none;
+      color: inherit;
     }
-    /* Remove bottom border for last row */
     .list li:last-child .item { border-bottom: none; }
 
-    /* Brand variables */
     .item.x        { --brand: #000000; }
     .item.linkedin { --brand: #0A66C2; }
     .item.signal   { --brand: #3A76F0; }
@@ -90,7 +90,6 @@
       text-transform: lowercase;
     }
 
-    /* Masked SVG icons coloured with brand variable */
     .icon {
       width: 20px;
       height: 20px;
@@ -102,13 +101,12 @@
       -webkit-mask-position: center;
       mask-position: center;
     }
-    .icon.x        { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg');           mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg'); }
-    .icon.linkedin { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg');    mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'); }
-    .icon.signal   { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg');      mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg'); }
-    .icon.telegram { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg');    mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg'); }
-    .icon.whatsapp { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg');    mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg'); }
+    .icon.x        { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg');        mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg'); }
+    .icon.linkedin { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'); mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'); }
+    .icon.signal   { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg');   mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg'); }
+    .icon.telegram { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg'); mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg'); }
+    .icon.whatsapp { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg'); mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg'); }
 
-    /* Faux button */
     .btn {
       width: 104px;
       text-align: center;
@@ -118,10 +116,9 @@
       border-radius: var(--radius);
       font-size: 0.9rem;
       color: var(--primary);
-      pointer-events: none; /* span inside anchor shouldn't steal click */
+      pointer-events: none;
     }
 
-    /* Hover state for entire row */
     .item:hover .btn,
     .item:focus-visible .btn {
       background: var(--primary);
