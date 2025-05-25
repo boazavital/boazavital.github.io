@@ -81,6 +81,7 @@
     .item.signal   { --brand: #3A76F0; }
     .item.telegram { --brand: #26A5E4; }
     .item.whatsapp { --brand: #25D366; }
+    .item.email    { --brand: #666666; }
 
     .label {
       display: flex;
@@ -101,11 +102,12 @@
       -webkit-mask-position: center;
       mask-position: center;
     }
-    .icon.x        { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg');        mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg'); }
-    .icon.linkedin { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'); mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'); }
-    .icon.signal   { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg');   mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg'); }
-    .icon.telegram { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg'); mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg'); }
-    .icon.whatsapp { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg'); mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg'); }
+    .icon.x        { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg');          mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg'); }
+    .icon.linkedin { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg');   mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'); }
+    .icon.signal   { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg');     mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/signal.svg'); }
+    .icon.telegram { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg');   mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg'); }
+    .icon.whatsapp { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg');   mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg'); }
+    .icon.email    { -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/heroicons@latest/24/outline/envelope.svg'); mask-image: url('https://cdn.jsdelivr.net/npm/heroicons@latest/24/outline/envelope.svg'); }
 
     .btn {
       width: 104px;
@@ -160,6 +162,12 @@
       <li>
         <a class="item whatsapp" href="https://wa.me/14087181143" target="_blank" rel="noopener">
           <span class="label"><span class="icon whatsapp"></span> whatsapp</span>
+          <span class="btn">Message</span>
+        </a>
+      </li>
+      <li>
+        <a class="item email" href="mailto:boaz@anchorage.com" target="_blank" rel="noopener">
+          <span class="label"><span class="icon email"></span> email</span>
           <span class="btn">Message</span>
         </a>
       </li>
